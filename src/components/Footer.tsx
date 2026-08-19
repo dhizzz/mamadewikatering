@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import { NAV_ITEMS } from "../data";
 import { MSG, WA_DISPLAY, waLink } from "../lib/wa";
-import { IconClock, IconHeart, IconInstagram, IconPin, IconPot, IconWhatsApp } from "./Icons";
+import { IconClipboard, IconClock, IconHeart, IconInstagram, IconPin, IconPot, IconWhatsApp } from "./Icons";
+import { ScrollLink } from "./ScrollLink";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -12,7 +14,7 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_0.8fr_1fr]">
           {/* Brand */}
           <div>
-            <a href="#beranda" className="group inline-flex items-center gap-3">
+            <ScrollLink to="beranda" className="group inline-flex items-center gap-3">
               <span className="grid h-12 w-12 place-items-center rounded-xl bg-brand-500 text-cream-50 transition-transform duration-300 group-hover:-rotate-6">
                 <IconPot className="h-7 w-7" />
               </span>
@@ -22,7 +24,7 @@ export default function Footer() {
                   Mama Dewi Catering
                 </span>
               </span>
-            </a>
+            </ScrollLink>
             <p className="mt-5 max-w-sm text-sm leading-relaxed">
               Katering rumahan dengan cinta sejak 2012. Enak, halal, dan bersahabat untuk semua acara — dari
               arisan RT sampai wedding impian.
@@ -55,15 +57,24 @@ export default function Footer() {
             <ul className="mt-5 space-y-3">
               {NAV_ITEMS.map((item) => (
                 <li key={item.id}>
-                  <a
-                    href={`#${item.id}`}
+                  <ScrollLink
+                    to={item.id}
                     className="group inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:text-sunny-400"
                   >
                     <span className="h-1 w-1 rounded-full bg-brand-500 transition-all duration-300 group-hover:w-4 group-hover:rounded-sm" />
                     {item.label}
-                  </a>
+                  </ScrollLink>
                 </li>
               ))}
+              <li>
+                <Link
+                  to="/request-quote"
+                  className="group inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:text-sunny-400"
+                >
+                  <IconClipboard className="h-3.5 w-3.5 text-brand-500 transition-transform duration-300 group-hover:-rotate-6" />
+                  Request Quote
+                </Link>
+              </li>
             </ul>
           </div>
 

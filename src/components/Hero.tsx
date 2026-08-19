@@ -1,6 +1,7 @@
 import { IMAGES } from "../data";
 import { MSG, waLink } from "../lib/wa";
 import { Reveal } from "./Reveal";
+import { ScrollLink } from "./ScrollLink";
 import { IconArrowRight, IconChat, IconPot, IconShield, IconSpark, IconStar, IconWhatsApp } from "./Icons";
 
 const AVATARS = [
@@ -86,13 +87,13 @@ export default function Hero() {
                   <IconWhatsApp className="h-6 w-6 transition-transform duration-300 group-hover:rotate-12" />
                   Pesan via WhatsApp
                 </a>
-                <a
-                  href="#menu"
+                <ScrollLink
+                  to="menu"
                   className="group inline-flex items-center justify-center gap-2 rounded-full border-2 border-cocoa-900 px-7 py-[14px] text-base font-extrabold text-cocoa-900 transition-all duration-300 hover:-translate-y-1 hover:bg-cocoa-900 hover:text-cream-50 active:scale-95"
                 >
                   Lihat Menu & Paket
                   <IconArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                </a>
+                </ScrollLink>
               </div>
               <p className="mt-4 flex items-center gap-2 text-sm font-semibold text-cocoa-400">
                 <IconChat className="h-4 w-4 text-wa-600" />

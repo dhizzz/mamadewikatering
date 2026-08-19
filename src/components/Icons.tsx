@@ -186,6 +186,13 @@ export const IconHeart = (p: P) => (
   </svg>
 );
 
+export const IconAlert = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M12 4.2 2.9 19.6h18.2Z" />
+    <path d="M12 10v4.2M12 16.9h.01" />
+  </svg>
+);
+
 export const IconUsers = (p: P) => (
   <svg {...base} {...p}>
     <circle cx="9" cy="8.2" r="3.4" />
